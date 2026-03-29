@@ -100,7 +100,6 @@
     }
     .nav-links a:hover { color: var(--accent); }
 
-    /* Hamburger — hidden on desktop */
     .hamburger {
       display: none;
       flex-direction: column;
@@ -502,8 +501,8 @@
       font-family: 'Syne', sans-serif;
       font-size: 1rem;
       font-weight: 700;
-      overflow-wrap: break-word;  
-      word-break: break-all;   
+      overflow-wrap: break-word;
+      word-break: break-all;
     }
 
     /* ========================
@@ -682,7 +681,7 @@
           <div class="stat-label">BSc Student</div>
         </div>
         <div class="stat-box">
-          <div class="stat-number">2+</div>
+          <div class="stat-number">3+</div>
           <div class="stat-label">Projects</div>
         </div>
       </div>
@@ -714,7 +713,7 @@
       <div class="skill-item">
         <div class="skill-name">Bootstrap</div>
         <div class="skill-level"><span class="skill-dot"></span>UI framework</div>
-      
+      </div>
     </div>
   </section>
 
@@ -738,6 +737,24 @@
         <span class="tag">OOP</span>
         <span class="tag">Collections</span>
         <span class="tag">CLI</span>
+      </div>
+    </a>
+
+    <a class="project-card reveal" href="/todo-app/" target="_blank" rel="noopener noreferrer">
+      <div class="project-header">
+        <div class="project-title">Web Task Manager</div>
+        <div class="project-arrow">↗</div>
+      </div>
+      <p class="project-desc">
+        A full-featured browser-based task manager. Supports categories, due dates,
+        custom tags, filtering, sorting and dark mode. Data persists across sessions
+        via localStorage — no backend required.
+      </p>
+      <div class="project-tags">
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">localStorage</span>
       </div>
     </a>
 
@@ -810,7 +827,7 @@
       </a>
       <a class="contact-item" href="https://www.linkedin.com/in/athanasios-salagiannis" target="_blank" rel="noopener noreferrer">
         <div class="contact-label">LinkedIn</div>
-        <div class="contact-value">https://www.linkedin.com/in/athanasios-salagiannis</div>
+        <div class="contact-value">linkedin.com/in/athanasios-salagiannis</div>
       </a>
       <div class="contact-item">
         <div class="contact-label">Location</div>
@@ -825,9 +842,6 @@
   </footer>
 
   <script>
-    // ========================
-    // Scroll reveal animation
-    // ========================
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
@@ -838,9 +852,6 @@
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // ========================
-    // Hamburger menu
-    // ========================
     const hamburger = document.getElementById('hamburger');
     const navLinks  = document.getElementById('navLinks');
 
@@ -849,7 +860,6 @@
       navLinks.classList.toggle('show');
     });
 
-    // Close menu when a nav link is clicked
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('open');
