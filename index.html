@@ -18,13 +18,7 @@
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'DM Mono', monospace;
-      overflow-x: hidden;
-      line-height: 1.6;
-    }
+    body { background: var(--bg); color: var(--text); font-family: 'DM Mono', monospace; overflow-x: hidden; line-height: 1.6; }
 
     body::before {
       content: '';
@@ -40,26 +34,13 @@
       content: '';
       position: fixed;
       inset: 0;
-      background-image:
-        linear-gradient(rgba(0,229,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,229,255,0.03) 1px, transparent 1px);
+      background-image: linear-gradient(rgba(0,229,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,229,255,0.03) 1px, transparent 1px);
       background-size: 60px 60px;
       pointer-events: none;
       z-index: 0;
     }
 
-    .navbar {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 500;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.2rem 2.5rem;
-      background: rgba(10,10,10,0.85);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
-    }
+    .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 500; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2.5rem; background: rgba(10,10,10,0.85); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
     .nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1rem; letter-spacing: 0.1em; color: var(--accent); text-decoration: none; }
     .nav-links { list-style: none; display: flex; gap: 2rem; }
     .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; transition: color 0.2s; }
@@ -211,7 +192,7 @@
         <div class="stat-box"><div class="stat-number">9mo</div><div class="stat-label">At sea</div></div>
         <div class="stat-box"><div class="stat-number">C2</div><div class="stat-label">English</div></div>
         <div class="stat-box"><div class="stat-number">CS</div><div class="stat-label">BSc Student</div></div>
-        <div class="stat-box"><div class="stat-number">5+</div><div class="stat-label">Projects</div></div>
+        <div class="stat-box"><div class="stat-number">6+</div><div class="stat-label">Projects</div></div>
       </div>
     </div>
   </section>
@@ -227,6 +208,7 @@
       <div class="skill-item"><div class="skill-name">CSS</div><div class="skill-level"><span class="skill-dot"></span>Styling</div></div>
       <div class="skill-item"><div class="skill-name">Bootstrap</div><div class="skill-level"><span class="skill-dot"></span>UI framework</div></div>
       <div class="skill-item"><div class="skill-name">Chart.js</div><div class="skill-level"><span class="skill-dot"></span>Data viz</div></div>
+      <div class="skill-item"><div class="skill-name">REST APIs</div><div class="skill-level"><span class="skill-dot"></span>fetch / async</div></div>
     </div>
   </section>
 
@@ -276,6 +258,17 @@
       <p class="project-desc">A personal finance tracker with category filtering, monthly summaries and an interactive doughnut chart powered by Chart.js. Data persists via localStorage. Demonstrates array methods like filter() and reduce().</p>
       <div class="project-tags">
         <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Chart.js</span>
+      </div>
+    </a>
+
+    <a class="project-card reveal" href="https://thanossala.github.io/weather-app/" target="_blank" rel="noopener noreferrer">
+      <div class="project-header">
+        <div class="project-title">Weather App</div>
+        <div class="project-arrow">↗</div>
+      </div>
+      <p class="project-desc">A real-time weather app powered by the OpenWeatherMap API. Search any city and get current conditions, feels-like temperature, humidity, wind speed and a 5-day forecast. Demonstrates fetch(), async/await and REST APIs.</p>
+      <div class="project-tags">
+        <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">REST API</span><span class="tag">async/await</span>
       </div>
     </a>
 
@@ -349,7 +342,7 @@
   </section>
 
   <footer>
-    <p>© 2026 Athanasios Salagiannis</p>
+    <p>© 2025 Athanasios Salagiannis</p>
     <p>Built with HTML · CSS · JS</p>
   </footer>
 
