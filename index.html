@@ -91,6 +91,8 @@
 
     .project-card { border: 1px solid var(--border); padding: 2.5rem; margin-bottom: 1px; transition: border-color 0.2s, background 0.2s; text-decoration: none; color: inherit; display: block; }
     .project-card:hover { border-color: var(--accent); background: var(--surface); }
+    .project-card.featured { border-color: rgba(0,229,255,0.3); position: relative; }
+    .project-card.featured::before { content: '⚓ FULL-STACK · LIVE'; position: absolute; top: 1.5rem; right: 1.5rem; font-size: 0.6rem; letter-spacing: 0.15em; color: var(--accent); border: 1px solid var(--accent); padding: 0.2rem 0.6rem; }
     .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
     .project-title { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 700; }
     .project-arrow { font-size: 1.2rem; color: var(--accent); transition: transform 0.2s; }
@@ -98,6 +100,10 @@
     .project-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.5rem; }
     .project-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
     .tag { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.7rem; border: 1px solid var(--border); color: var(--muted); }
+    .tag.highlight { border-color: rgba(0,229,255,0.4); color: var(--accent); }
+    .project-links { display: flex; gap: 1rem; margin-top: 1.2rem; }
+    .project-link { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 2px; transition: color 0.2s, border-color 0.2s; }
+    .project-link:hover { color: var(--accent); border-color: var(--accent); }
 
     .exp-item { display: grid; grid-template-columns: 200px 1fr; gap: 3rem; padding: 2.5rem 0; border-bottom: 1px solid var(--border); }
     .exp-item:first-child { border-top: 1px solid var(--border); }
@@ -135,6 +141,7 @@
       .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
       .contact-grid { grid-template-columns: 1fr; }
       .project-card { padding: 1.5rem; }
+      .project-card.featured::before { display: none; }
       .hero-btns { flex-direction: column; gap: 0.8rem; }
       footer { flex-direction: column; gap: 1rem; text-align: center; }
     }
@@ -192,7 +199,7 @@
         <div class="stat-box"><div class="stat-number">9mo</div><div class="stat-label">At sea</div></div>
         <div class="stat-box"><div class="stat-number">C2</div><div class="stat-label">English</div></div>
         <div class="stat-box"><div class="stat-number">CS</div><div class="stat-label">BSc Student</div></div>
-        <div class="stat-box"><div class="stat-number">7+</div><div class="stat-label">Projects</div></div>
+        <div class="stat-box"><div class="stat-number">8+</div><div class="stat-label">Projects</div></div>
       </div>
     </div>
   </section>
@@ -204,11 +211,16 @@
     <div class="skills-grid reveal">
       <div class="skill-item"><div class="skill-name">Java</div><div class="skill-level"><span class="skill-dot"></span>Core language</div></div>
       <div class="skill-item"><div class="skill-name">JavaScript</div><div class="skill-level"><span class="skill-dot"></span>Frontend logic</div></div>
+      <div class="skill-item"><div class="skill-name">Node.js</div><div class="skill-level"><span class="skill-dot"></span>Backend runtime</div></div>
+      <div class="skill-item"><div class="skill-name">Express</div><div class="skill-level"><span class="skill-dot"></span>REST APIs</div></div>
+      <div class="skill-item"><div class="skill-name">SQL / SQLite</div><div class="skill-level"><span class="skill-dot"></span>Databases</div></div>
       <div class="skill-item"><div class="skill-name">HTML</div><div class="skill-level"><span class="skill-dot"></span>Structure</div></div>
       <div class="skill-item"><div class="skill-name">CSS</div><div class="skill-level"><span class="skill-dot"></span>Styling</div></div>
       <div class="skill-item"><div class="skill-name">Bootstrap</div><div class="skill-level"><span class="skill-dot"></span>UI framework</div></div>
       <div class="skill-item"><div class="skill-name">Chart.js</div><div class="skill-level"><span class="skill-dot"></span>Data viz</div></div>
       <div class="skill-item"><div class="skill-name">REST APIs</div><div class="skill-level"><span class="skill-dot"></span>fetch / async</div></div>
+      <div class="skill-item"><div class="skill-name">JWT Auth</div><div class="skill-level"><span class="skill-dot"></span>Authentication</div></div>
+      <div class="skill-item"><div class="skill-name">Git / GitHub</div><div class="skill-level"><span class="skill-dot"></span>Version control</div></div>
     </div>
   </section>
 
@@ -216,7 +228,30 @@
     <div class="section-label">03 — Projects</div>
     <h2 class="reveal">Things I've built.</h2>
     <br>
-<a class="project-card reveal" href="https://github.com/thanossala/Java-ATM-Simulator" target="_blank" rel="noopener noreferrer">
+
+    <!-- SHIPLOG — Featured full-stack project -->
+    <a class="project-card featured reveal" href="https://shiplog-tafy.onrender.com" target="_blank" rel="noopener noreferrer">
+      <div class="project-header">
+        <div class="project-title">ShipLog — Crew Activity Tracker</div>
+        <div class="project-arrow">↗</div>
+      </div>
+      <p class="project-desc">A full-stack web application for logging crew activities at sea. Features JWT authentication, a REST API with full CRUD operations, SQLite database, dashboard with live statistics and Chart.js visualizations. Deployed live on Render.</p>
+      <div class="project-tags">
+        <span class="tag highlight">Node.js</span>
+        <span class="tag highlight">Express</span>
+        <span class="tag highlight">SQLite</span>
+        <span class="tag highlight">JWT Auth</span>
+        <span class="tag">REST API</span>
+        <span class="tag">Chart.js</span>
+        <span class="tag">Render</span>
+      </div>
+      <div class="project-links">
+        <a class="project-link" href="https://shiplog-tafy.onrender.com" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">Live Demo</a>
+        <a class="project-link" href="https://github.com/thanossala/shiplog" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">GitHub</a>
+      </div>
+    </a>
+
+    <a class="project-card reveal" href="https://github.com/thanossala/Java-ATM-Simulator" target="_blank" rel="noopener noreferrer">
       <div class="project-header">
         <div class="project-title">Java ATM Simulator</div>
         <div class="project-arrow">↗</div>
@@ -226,6 +261,7 @@
         <span class="tag">Java</span><span class="tag">File I/O</span><span class="tag">Encapsulation</span><span class="tag">CLI</span>
       </div>
     </a>
+
     <a class="project-card reveal" href="https://github.com/thanossala/java-task-manager" target="_blank" rel="noopener noreferrer">
       <div class="project-header">
         <div class="project-title">Java Task Manager</div>
