@@ -147,6 +147,87 @@
     }
     @media (max-width: 480px) { .skills-grid { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 350px) { .skills-grid { grid-template-columns: 1fr; } }
+    /* ===== MOBILE FIXES (prevents "zoomed" feeling) ===== */
+@media (max-width: 700px) {
+
+  /* Typography fix */
+  h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+    line-height: 1.1;
+  }
+
+  /* Reduce overall scale */
+  body {
+    font-size: 14px;
+  }
+
+  /* Navbar spacing */
+  .navbar {
+    padding: 0.8rem 1.2rem;
+  }
+
+  /* Hero spacing */
+  .hero {
+    padding: 0 1rem;
+    padding-top: 80px;
+  }
+
+  /* Section spacing */
+  section {
+    padding: 3rem 1rem;
+  }
+
+  /* Buttons full width (better UX) */
+  .hero-btns {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Project cards tighter */
+  .project-card {
+    padding: 1.5rem;
+  }
+
+  /* Grid fixes */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Improve readability */
+  .hero-desc {
+    font-size: 0.85rem;
+  }
+
+  .project-desc {
+    font-size: 0.8rem;
+  }
+
+  /* Prevent overflow issues */
+  h1, h2, p {
+    word-wrap: break-word;
+  }
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 400px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-desc {
+    font-size: 0.8rem;
+  }
+}
   </style>
 </head>
 <body>
