@@ -93,6 +93,8 @@
     .project-card:hover { border-color: var(--accent); background: var(--surface); }
     .project-card.featured { border-color: rgba(0,229,255,0.3); position: relative; }
     .project-card.featured::before { content: '⚓ FULL-STACK · LIVE'; position: absolute; top: 1.5rem; right: 1.5rem; font-size: 0.6rem; letter-spacing: 0.15em; color: var(--accent); border: 1px solid var(--accent); padding: 0.2rem 0.6rem; }
+    .project-card.flagship { border-color: rgba(0,229,255,0.5); position: relative; background: rgba(0,229,255,0.02); }
+    .project-card.flagship::before { content: '🚢 FULL-STACK · LIVE · FEATURED'; position: absolute; top: 1.5rem; right: 1.5rem; font-size: 0.6rem; letter-spacing: 0.15em; color: var(--accent); border: 1px solid var(--accent); padding: 0.2rem 0.6rem; }
     .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
     .project-title { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 700; }
     .project-arrow { font-size: 1.2rem; color: var(--accent); transition: transform 0.2s; }
@@ -141,93 +143,21 @@
       .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
       .contact-grid { grid-template-columns: 1fr; }
       .project-card { padding: 1.5rem; }
-      .project-card.featured::before { display: none; }
+      .project-card.featured::before, .project-card.flagship::before { display: none; }
       .hero-btns { flex-direction: column; gap: 0.8rem; }
       footer { flex-direction: column; gap: 1rem; text-align: center; }
+      h1 { font-size: clamp(2rem, 6vw, 3rem); line-height: 1.1; }
+      body { font-size: 14px; }
+      .hero { padding: 0 1rem; padding-top: 80px; }
+      section { padding: 3rem 1rem; }
+      .btn { width: 100%; text-align: center; }
+      .hero-desc { font-size: 0.85rem; }
+      .project-desc { font-size: 0.8rem; }
+      h1, h2, p { word-wrap: break-word; }
     }
     @media (max-width: 480px) { .skills-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 400px) { h1 { font-size: 1.8rem; } .hero-desc { font-size: 0.8rem; } }
     @media (max-width: 350px) { .skills-grid { grid-template-columns: 1fr; } }
-    /* ===== MOBILE FIXES (prevents "zoomed" feeling) ===== */
-@media (max-width: 700px) {
-
-  /* Typography fix */
-  h1 {
-    font-size: clamp(2rem, 6vw, 3rem);
-    line-height: 1.1;
-  }
-
-  /* Reduce overall scale */
-  body {
-    font-size: 14px;
-  }
-
-  /* Navbar spacing */
-  .navbar {
-    padding: 0.8rem 1.2rem;
-  }
-
-  /* Hero spacing */
-  .hero {
-    padding: 0 1rem;
-    padding-top: 80px;
-  }
-
-  /* Section spacing */
-  section {
-    padding: 3rem 1rem;
-  }
-
-  /* Buttons full width (better UX) */
-  .hero-btns {
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-
-  .btn {
-    width: 100%;
-    text-align: center;
-  }
-
-  /* Project cards tighter */
-  .project-card {
-    padding: 1.5rem;
-  }
-
-  /* Grid fixes */
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Improve readability */
-  .hero-desc {
-    font-size: 0.85rem;
-  }
-
-  .project-desc {
-    font-size: 0.8rem;
-  }
-
-  /* Prevent overflow issues */
-  h1, h2, p {
-    word-wrap: break-word;
-  }
-}
-
-/* EXTRA SMALL DEVICES */
-@media (max-width: 400px) {
-  h1 {
-    font-size: 1.8rem;
-  }
-
-  .hero-desc {
-    font-size: 0.8rem;
-  }
-}
   </style>
 </head>
 <body>
@@ -280,7 +210,7 @@
         <div class="stat-box"><div class="stat-number">9mo</div><div class="stat-label">At sea</div></div>
         <div class="stat-box"><div class="stat-number">C2</div><div class="stat-label">English</div></div>
         <div class="stat-box"><div class="stat-number">CS</div><div class="stat-label">BSc Student</div></div>
-        <div class="stat-box"><div class="stat-number">8+</div><div class="stat-label">Projects</div></div>
+        <div class="stat-box"><div class="stat-number">9+</div><div class="stat-label">Projects</div></div>
       </div>
     </div>
   </section>
@@ -290,17 +220,17 @@
     <h2 class="reveal">What I work with.</h2>
     <br>
     <div class="skills-grid reveal">
-      <div class="skill-item"><div class="skill-name">Java</div><div class="skill-level"><span class="skill-dot"></span>Core language</div></div>
-      <div class="skill-item"><div class="skill-name">JavaScript</div><div class="skill-level"><span class="skill-dot"></span>Frontend logic</div></div>
+      <div class="skill-item"><div class="skill-name">React</div><div class="skill-level"><span class="skill-dot"></span>Frontend</div></div>
+      <div class="skill-item"><div class="skill-name">TypeScript</div><div class="skill-level"><span class="skill-dot"></span>Type safety</div></div>
       <div class="skill-item"><div class="skill-name">Node.js</div><div class="skill-level"><span class="skill-dot"></span>Backend runtime</div></div>
       <div class="skill-item"><div class="skill-name">Express</div><div class="skill-level"><span class="skill-dot"></span>REST APIs</div></div>
-      <div class="skill-item"><div class="skill-name">SQL / SQLite</div><div class="skill-level"><span class="skill-dot"></span>Databases</div></div>
+      <div class="skill-item"><div class="skill-name">PostgreSQL</div><div class="skill-level"><span class="skill-dot"></span>Database</div></div>
+      <div class="skill-item"><div class="skill-name">Java</div><div class="skill-level"><span class="skill-dot"></span>Core language</div></div>
+      <div class="skill-item"><div class="skill-name">JavaScript</div><div class="skill-level"><span class="skill-dot"></span>Frontend logic</div></div>
       <div class="skill-item"><div class="skill-name">HTML</div><div class="skill-level"><span class="skill-dot"></span>Structure</div></div>
       <div class="skill-item"><div class="skill-name">CSS</div><div class="skill-level"><span class="skill-dot"></span>Styling</div></div>
-      <div class="skill-item"><div class="skill-name">Bootstrap</div><div class="skill-level"><span class="skill-dot"></span>UI framework</div></div>
-      <div class="skill-item"><div class="skill-name">Chart.js</div><div class="skill-level"><span class="skill-dot"></span>Data viz</div></div>
-      <div class="skill-item"><div class="skill-name">REST APIs</div><div class="skill-level"><span class="skill-dot"></span>fetch / async</div></div>
       <div class="skill-item"><div class="skill-name">JWT Auth</div><div class="skill-level"><span class="skill-dot"></span>Authentication</div></div>
+      <div class="skill-item"><div class="skill-name">Chart.js</div><div class="skill-level"><span class="skill-dot"></span>Data viz</div></div>
       <div class="skill-item"><div class="skill-name">Git / GitHub</div><div class="skill-level"><span class="skill-dot"></span>Version control</div></div>
     </div>
   </section>
@@ -310,7 +240,31 @@
     <h2 class="reveal">Things I've built.</h2>
     <br>
 
-    <!-- SHIPLOG — Featured full-stack project -->
+    <!-- VESSELOPS — Flagship project -->
+    <a class="project-card flagship reveal" href="https://vesselops-frontend.vercel.app" target="_blank" rel="noopener noreferrer">
+      <div class="project-header">
+        <div class="project-title">VesselOps</div>
+        <div class="project-arrow">↗</div>
+      </div>
+      <p class="project-desc">Full-stack maritime crew management platform. Built from real experience at sea — digitizes crew scheduling, STCW certificate tracking (with auto-expiry alerts), watch schedules, and digital logbook for commercial vessels. React + TypeScript frontend, Node.js + Express API, PostgreSQL database on Supabase.</p>
+      <div class="project-tags">
+        <span class="tag highlight">React</span>
+        <span class="tag highlight">TypeScript</span>
+        <span class="tag highlight">Node.js</span>
+        <span class="tag highlight">PostgreSQL</span>
+        <span class="tag">JWT Auth</span>
+        <span class="tag">Supabase</span>
+        <span class="tag">Vercel</span>
+        <span class="tag">Render</span>
+      </div>
+      <div class="project-links">
+        <span class="project-link">Live demo ↗</span>
+        <a class="project-link" href="https://github.com/thanossala/vesselops-frontend" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">Frontend repo ↗</a>
+        <a class="project-link" href="https://github.com/thanossala/vesselops-api" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">API repo ↗</a>
+      </div>
+    </a>
+
+    <!-- SHIPLOG -->
     <a class="project-card featured reveal" href="https://shiplog-tafy.onrender.com" target="_blank" rel="noopener noreferrer">
       <div class="project-header">
         <div class="project-title">ShipLog — Crew Activity Tracker</div>
@@ -327,29 +281,23 @@
         <span class="tag">Render</span>
       </div>
     </a>
-<a class="project-card featured reveal" href="https://thanossala.github.io/expense-tracker-react/" target="_blank" rel="noopener noreferrer">
-  <div class="project-header">
-    <div class="project-title">Expense Tracker React</div>
-    <div class="project-arrow">↗</div>
-  </div>
 
-  <p class="project-desc">
-    A modern personal finance tracker built with React and Vite.
-    Features dynamic expense management, category filtering,
-    interactive charts with Chart.js and persistent data storage using localStorage.
-    Fully responsive and deployed with GitHub Pages.
-  </p>
+    <a class="project-card featured reveal" href="https://thanossala.github.io/expense-tracker-react/" target="_blank" rel="noopener noreferrer">
+      <div class="project-header">
+        <div class="project-title">Expense Tracker React</div>
+        <div class="project-arrow">↗</div>
+      </div>
+      <p class="project-desc">A modern personal finance tracker built with React and Vite. Features dynamic expense management, category filtering, interactive charts with Chart.js and persistent data storage using localStorage. Fully responsive and deployed with GitHub Pages.</p>
+      <div class="project-tags">
+        <span class="tag highlight">React</span>
+        <span class="tag highlight">Vite</span>
+        <span class="tag highlight">Chart.js</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">localStorage</span>
+        <span class="tag">GitHub Pages</span>
+      </div>
+    </a>
 
-  <div class="project-tags">
-    <span class="tag highlight">React</span>
-    <span class="tag highlight">Vite</span>
-    <span class="tag highlight">Chart.js</span>
-    <span class="tag">JavaScript</span>
-    <span class="tag">localStorage</span>
-    <span class="tag">GitHub Pages</span>
-  </div>
-</a>
-  
     <a class="project-card reveal" href="https://github.com/thanossala/java-task-manager" target="_blank" rel="noopener noreferrer">
       <div class="project-header">
         <div class="project-title">Java Task Manager</div>
@@ -501,3 +449,4 @@
 
 </body>
 </html>
+
